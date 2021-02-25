@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import 'base';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  color: inherit;
+}
+
+html, body {
+  background: $color-white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: $color-primary;
+}
+
+#root {
+  text-align: left;
+  line-height: 3*$unit;
+}
+
+
+/* Section Structure */
+
+header  { padding: 2*$unit 0; }
+section { padding: 5*$unit 0; border-bottom: 1px solid #ddd;}
+footer  { padding: 5*$unit 0 }
+figure  { padding: 2*$unit 0; margin: 0; }
+
+.margins {
+  margin: 0 auto;
+  padding: 0 2*$unit;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+
+  figure  { width: 100%; }
+  &.one   { justify-content: center; }
+  &.two   { justify-content: space-between; }
+  &.three { justify-content: flex-start; }
+}
+
+/* Section Structure */
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.2; }
+h1 { font-size: 70px; }
+h2 { font-size: 26px; text-align: center; margin-top:0; margin-bottom: 3*$unit}
+h3 { font-size: 20px; }
+p  { font-size: 16px; }
+a  { text-decoration: none; }
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 2*$unit;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+blockquote {
+  padding: 3*$unit 0 0;
+  margin: 3*$unit 0 0;
+  border-top: 1px solid #eee;
+  font-style: italic;
+  @include type-normal;
+  cite {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    padding: 2*$unit 0;
+  }
+}
+button {
+  border: 1px solid $color-primary;
+  background: rgba(255,255,255,0);
+  padding: 2*$unit;
+  line-height: $unit;
+  font-size: 16px;
+  @include transition(all);
+  @include clickable;
+  outline: none;
+  &:hover, &:focus {
+    background-color: $color-highlight;
+    border-color: $color-highlight;
+    @include light-shadow;
+    transform: translateY(-2px);
+  }
+  &:active {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: $color-white;
+  }
+}
+input {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  @include transition(all);
+  &:hover {}
+  &:focus {
+    outline: none;
+    @include light-shadow;
+  }
+}
+
+.linklist {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+  a {
+    border-bottom: 2px solid $color-white;
+    @include transition(all);
+    &:hover { border-bottom-color: $color-highlight;  }
+  }
+}
+
+
+
+.header {
+  position: relative;
+  width: 100%;
+
+  .margins {
+    display: flex;
+    justify-content: space-between;
+
+    .landing-logo {
+      display: block;
+      margin: 1.5*$unit 0;
+      line-height: $unit;
+      @include type-normal;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      color: $color-primary;
+
+      span {
+        color: $color-highlight;
+      }
+    }
+    nav {
+      ul {
+        justify-content: flex-end;
+
+        li {
+          margin-left: 3*$unit;
+          line-height: $unit;
+
+          a {
+            display: block;
+            padding: 1.5*$unit 0;
+          }
+          button {
+            padding: 1.5*$unit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  text-align: center;
+  padding-top: 5*$unit;
+  padding-bottom: 0;
+  background-image: linear-gradient(0deg, #E0F6ED 0%, #FFFFFF 50%, #FFFFFF 100%);
+  h1 { margin-top: -20px; margin-bottom: 0; }
+  .lead-in { font-size: 2.5*$unit; line-height: 1.5; }
+  .value-prop { font-size: 2*$unit; line-height: 1.5; }
+  .hero-image {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    margin-top: 5*$unit;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid rgba(0,0,0,.1);
+    border-bottom: none;
+  }
+}
+
+.steps {
+  .illustration {
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    &.illo-ui { background-image: url(../../img/illo-large-ui.svg); }
+    &.illo-glasses { background-image: url(../../img/illo-large-glasses.svg); }
+    &.illo-car { background-image: url(../../img/illo-large-car.svg); }
+  }
+  .step { // Delete this section once images are real.
+    figcaption { padding: 0; }
+    ul { border-left: 2px solid $color-highlight; padding-left: 1.5*$unit; }
+  }
+
+}
+
+.features {
+  .illustration { width: 100px; display: none; }
+}
+
+.end-beta {
+  text-align: center;
+  .margins {
+    max-width: 600px;
+    margin: 0 auto;
+    h2 { margin-bottom: 5*$unit; }
+    p { margin-bottom: 5*$unit; }
+  }
+}
+
+.notify {
+  .margins {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  form {
+    position: relative;
+    justify-content: space-between;
+    margin: 0 0 5*$unit;
+    height: 8*$unit + 4;
+    border: 1px solid #ccc;
+
+    input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      background-color: #f9f9f9;
+      padding-left: 3*$unit;
+      z-index: 1;
+    }
+
+    button {
+      position: absolute;
+      width: 130px;
+      top: 1.5*$unit;
+      right: 1.5*$unit;
+      bottom: 1.5*$unit;
+
+      z-index: 1000;
+    }
+  }
+}
+
+footer {
+
+  p { width: 100%; line-height: $unit; padding: 1.5*$unit 0; margin: 0; margin-bottom: 5*$unit;  }
+
+  .linklist {
+    display: block;
+    li {
+      padding: 0;
+      padding-right: 3*$unit;
+      a { display: inline-block; line-height: $unit; padding: 1.5*$unit 0; }
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 640px) {
+
+
+  .margins {
+    padding: 0;
+    width: 600px;
+  }
+
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.one   { }
+    &.two   {
+      .feature {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        img { display: block; width: 100px; margin-right: 30px;}
+        div {
+          width: auto;
+          padding-right: 30px;
+        }
+      }
+    }
+    &.three {
+      figure  { width: 47%; margin-right: 6%; }
+      figure:nth-child(2n+0) { margin-right: 0; }
+    }
+  }
+
+  h1 { font-size: 120px; }
+
+  .intro { margin: 0 auto; width: 66%; text-align: center; }
+
+  .hero {
+    .lead-in { font-size: 24px; }
+    .value-prop { font-size: 20px; padding: 0 20% }
+    .hero-image { width: 100%; }
+  }
+
+  footer {
+    p { width: auto; padding-bottom: 0; }
+
+    .linklist {
+      display: flex;
+      li {
+        padding-left: 3*$unit;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+
+
+
+    header  {  }
+    section { padding: 10*$unit 0; }
+    footer  {  }
+    figure  {  }
+
+    h1 {  }
+    h2 { margin-bottom: 8*$unit;}
+    h3 {  }
+
+
+    .margins {
+      padding: 0;
+      width: 960px;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+
+      &.one   { }
+      &.two   {
+        figcaption { width: 40%; margin-right: 5%; margin-left: 5%; }
+        div { width: 50%; }
+
+        .feature {
+          width: 50%;
+          img { width: 150px;  }
+          div { padding-right: 50px; }
+        }
+      }
+      &.three {
+        figure  {
+          width: 30%; margin-right: 5%;
+        }
+        figure:nth-child(2n+0) { margin-right: 5%; }
+        figure:nth-child(3n+0) { margin-right: 0; }
+      }
+    }
+
+
+    .linklist {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      list-style-type: none;
+    }
+
+
+    .hero {
+      text-align: center;
+      padding-top: 5*$unit;
+      h1 { margin-top: -20px; }
+      .hero-image { width: 75%; margin-top: 10*$unit; }
+    }
+
+    .steps {
+      .step {
+        figcaption { padding-top: 5*$unit; }
+        h3 {  }
+        &:nth-child(even) { flex-direction: row-reverse; }
+      }
+      figure  { margin-bottom: 5*$unit; }
+      figure:last-child { margin-bottom: 2*$unit;  }
+    }
+
+    .features {
+      .illustration { display: block; }
+      figure  { margin-bottom: 5*$unit; }
+    }
+
+    .notify { }
+
+}
+
+@media screen and (min-width: 1300px) {
+
+
+  .margins {
+    padding: 0;
+    width: 1200px;
+  }
+
+
+}

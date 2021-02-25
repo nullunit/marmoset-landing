@@ -1,0 +1,44 @@
+/* Grid */
+$unit: 8px;
+
+/* Colors */
+$color-primary: #271034; //Dark Purple
+$color-primary-90: #341F40;
+$color-hover: #a6ebcf; // Light Green -- used in Most Menus
+$color-hover-dark: #3E7C6E; // Dark Green -- used in App Menu
+$color-highlight: #49D89D; // Green -- Consider renaming active?
+
+
+$color-white: #ffffff;
+$color-lightgray: #e2e7ed;
+$color-white: #ffffff;
+
+$color-bgscreen: rgba(233, 230, 235, 0.5);
+
+/* Shadows */
+@mixin light-shadow { box-shadow: 0 0 15px 0 rgba(39, 16, 52, 0.2); }
+
+
+
+/* Fonts */
+
+
+/* Typescale */
+
+$type-unit: 13px;
+
+@mixin type-normal {font-size: $type-unit;}
+@mixin type-small {font-size: $type-unit * .77;}
+@mixin type-big {font-size: $type-unit * 1.38;}
+@mixin type-huge {font-size: $type-unit * 1.84;}
+
+
+
+/* Animation */
+
+@mixin transition ($property) {
+  transition: $property .15s ease;
+}
+
+/* Interaction */
+@mixin clickable { cursor: pointer; }
