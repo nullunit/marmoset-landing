@@ -200,9 +200,9 @@ input {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    &.illo-ui { background-image: url(../../img/illo-large-ui.svg); }
-    &.illo-glasses { background-image: url(../../img/illo-large-glasses.svg); }
-    &.illo-car { background-image: url(../../img/illo-large-car.svg); }
+    &.illo-ui { background-image: url(../img/illo-large-ui.svg); }
+    &.illo-glasses { background-image: url(../img/illo-large-glasses.svg); }
+    &.illo-car { background-image: url(../img/illo-large-car.svg); }
   }
   .step { // Delete this section once images are real.
     figcaption { padding: 0; }

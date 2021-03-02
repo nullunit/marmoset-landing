@@ -202,11 +202,11 @@ input {
   background-position: center center;
   background-size: contain; }
   .steps .illustration.illo-ui {
-    background-image: url(../../img/illo-large-ui.svg); }
+    background-image: url(../img/illo-large-ui.svg); }
   .steps .illustration.illo-glasses {
-    background-image: url(../../img/illo-large-glasses.svg); }
+    background-image: url(../img/illo-large-glasses.svg); }
   .steps .illustration.illo-car {
-    background-image: url(../../img/illo-large-car.svg); }
+    background-image: url(../img/illo-large-car.svg); }
 .steps .step figcaption {
   padding: 0; }
 .steps .step ul {
